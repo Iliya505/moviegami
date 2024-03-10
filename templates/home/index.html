@@ -10,7 +10,15 @@
                   <div class="about_taital">MovieGami</div>
                   <p class="about_text">welcome to MovieGami!</p>
                   <p class="about_text">you can watch moves by clicking the button below.</p>
-                  <div class="read_bt"><a href="{% url 'movie_list' %}">Movies</a></div>
+                  <div class="read_bt "><a href="{% url 'movie_list' %}">Movies</a></div>
+                  {% if request.user.is_authenticated %}
+                     <div class="row">
+                        <form method="post" action="{% url 'logout' %}" >
+                           {% csrf_token %}
+                           <div class="read_bt"><button type="submit"><a class="bg-warning">logout</a></button></div>
+                        </form>
+                     </div>
+                  {% endif %}
                </div>
             </div>
             <div class="col-md-6">
