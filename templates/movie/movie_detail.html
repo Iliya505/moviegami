@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="about_section layout_padding">
+    <div class="container">
+       <div class="row">
+          <div class="col-md-6">
+             <div class="about_taital_main">
+                <div class="about_taital">{{detail.name}}</div>
+                <p class="about_text">{{detail.genre}}</p>
+                <p class="about_text">{{detail.time}}</p>
+                <p class="about_text">{{detail.age}}</p>
+                <p class="about_text">{{detail.summary}}</p>
+                <div class="read_bt"><a href="#">edit</a></div>
+             </div>
+          </div>
+          <div class="col-md-6">
+             <div class="about_img p-5 "><img src="{{detail.photo.url}}"></div>
+          </div>
+       </div>
+    </div>
+ </div>
+{% endblock content %}
