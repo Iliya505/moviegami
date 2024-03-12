@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
+from django.urls import reverse
 
 # Create your models here.
 
@@ -23,3 +24,7 @@ class Movie(models.Model):
 
     class Meta:
         ordering=('name',)
+        
+    def get_absolute_url(self):
+        return reverse("movie_detail", kwargs={"slug": self.slug})
+    
