@@ -127,18 +127,15 @@
          </div>
       </div>
       <!-- banner section end -->
-
-
       {% if messages %}
+      
+         {% for message in messages %}
 
-         {% for msg in messages %}
-
-            <p class="alert alert-{{msg.tags}} p-5">{{msg}}</p>
-
+         <li class="alert alert-{{message.tags}}">{{message}}</li>
+         
          {% endfor %}
-
+   
       {% endif %}
-
       {% block content %}
       
       
