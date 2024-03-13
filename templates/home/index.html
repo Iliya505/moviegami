@@ -10,19 +10,19 @@
                   <div class="about_taital">MovieGami</div>
                   <p class="about_text">welcome to MovieGami!</p>
                   <p class="about_text">you can watch moves by clicking the button below.</p>
-                  <div class="read_bt "><a href="{% url 'movie_list' %}">Movies</a></div>
+                  <div class="read_bt p-5"><a href="{% url 'movie_list' %}">Movies</a></div>
                   {% if request.user.is_authenticated %}
                      <div class="row">
                         <form method="post" action="{% url 'logout' %}" >
                            {% csrf_token %}
-                           <div class="read_bt"><button type="submit"><a class="bg-warning">logout</a></button></div>
+                           <div class="read_bt p-5"><button type="submit"><a class="bg-warning">logout</a></button></div>
                         </form>
                      </div>
                   {% endif %}
                </div>
             </div>
             <div class="col-md-6">
-               <div class="about_img p-5"><img src="{% static 'images/about-img.png' %}"></div>
+               <div class="about_img p-5"><img src="{% static 'images/paper.jpg' %}"></div>
             </div>
          </div>
       </div>

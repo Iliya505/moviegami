@@ -28,7 +28,7 @@ class MovieDetailView(DetailView):
 class MovieUpdateView(LoginRequiredMixin, UpdateView):
     model = Movie
     template_name = 'movie\movie_update.html'
-    fields = ['name']
+    fields = ['name', 'genre', 'time', 'summary', 'age']
     
     
     
@@ -38,8 +38,9 @@ class MovieDeleteView(LoginRequiredMixin, DeleteView):
     template_name = 'movie\movie_delete.html'
     success_url = reverse_lazy('home')
     
+
     
-# movie create view
+# enchanced movie create view
 @login_required
 def create_movie(request):
     if request.method == 'POST':

@@ -5,6 +5,7 @@ from django.urls import reverse_lazy
 from .forms import UserRegisterForm
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -17,6 +18,7 @@ class UserRegisterView(CreateView):
     
     
 # enc register
+@login_required
 def register_page(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
